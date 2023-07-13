@@ -1,0 +1,176 @@
+// Hardcoded outcome type colors
+$outcome-type-colors: (
+  outcome-type-color-1-bg: #264681,     // navy blue
+  outcome-type-color-1-color: #b2c1dc,  // light blue
+  outcome-type-color-2-bg: #940240,     // wine red
+  outcome-type-color-2-color: #e8c0c4,  // light red
+  outcome-type-color-3-bg: #166c44,     // forrest green
+  outcome-type-color-3-color: #d2e5db,  // light green
+  outcome-type-color-4-bg: #9b5a21,     // earth brown
+  outcome-type-color-4-color: #f4efe7,  // light yellow
+  outcome-type-color-5-bg: #515151,     // dark gray
+  outcome-type-color-5-color: #c9c9c9,  // light gray
+  outcome-type-color-6-bg: #136572,     // teal
+  outcome-type-color-6-color: #dbe7eb,  // light teal
+  outcome-type-color-7-bg: #721e69,     // maroon
+  outcome-type-color-7-color: #d6b8d3,  // light maroon
+  outcome-type-color-8-bg: #4c276a,     // dark lavender
+  outcome-type-color-8-color: #cdbfd8   // light lavender gray
+);
+
+.card.outcomeoverview {
+	width: 45%;
+}
+
+@include media-breakpoint-down(lg) {
+	.card.outcomeoverview {
+		width: 100%;
+	}
+}
+
+a.outcome-state,
+a.activity-state {
+	padding: 0 !important;
+	border: none !important;
+    text-decoration: none;
+	// complete icon
+	&.outcome-complete {
+		color: $progresscompletion-verified-color !important;
+		&:hover,
+		&:focus {
+			color: scale-color($progresscompletion-verified-color, $lightness: -15%) !important;
+		}
+	}
+
+	& .icon.disabled {
+		cursor: not-allowed;
+		color: scale-color($gray-300, $lightness: 28%) !important;
+		&.dot:before {
+	// text-decoration: none;
+	// .icon.disabled {
+	// 	cursor: not-allowed;
+	// 	&:before {
+			content: "\f068";
+		}
+	}
+	&:focus {
+		outline: 0 !important;
+	}
+}
+
+form.outcome-progress-form {
+	label {
+		margin-bottom: $spacing-base; // 10px
+	}
+	div.textarea-section {
+		display: inline-block;
+		& .errmsg {
+			margin: 0;
+		}
+		& .progress-detail {
+			overflow-wrap: break-word;
+			margin-bottom: $spacing-base; // 10px
+		}
+	}
+	textarea {
+		margin-bottom: $spacing-base; // 10px
+	}
+}
+
+// includes hardcoded outcome type classes for background and border color
+div.outcome-type {
+	display: inline-block;
+	padding-top: 0.25rem; // 4px;
+	span {
+        padding: 0.75rem 0.25rem; // makes the height 36px
+        min-width: 2.25rem; // 36px;
+        @for $i from 1 through 8 {
+            &.text-bg-outcome#{$i} {
+                background-color: map-get($outcome-type-colors, outcome-type-color-#{$i}-bg);
+                color: map-get($outcome-type-colors, outcome-type-color-#{$i}-color);
+            }
+		}
+	}
+}
+
+span.help {
+	float: none !important;
+	margin: 0 !important;
+}
+
+.delete-button-container {
+	border-bottom: $list-group-border-width solid $list-group-border-color;
+}
+
+.outcome-form-section {
+	margin-top: 2rem; // 32px
+}
+
+.collapsible-group .pieform-fieldset.collapsible .pieform.supportform .form-group {
+	border-bottom: 0;
+}
+
+div.activity-outcome-line {
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+
+	@include media-breakpoint-down(md) {
+		display: block;
+		position: relative;
+
+		div.outcome-text {
+			width: 60%;
+			
+			&:first-child {
+				margin-top: 1.5rem;
+			}
+		}
+		
+		.activity-outcome-signoff {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+    & div.outcome-text {
+        padding-right: 1.25rem;// 20px;
+    }
+    & .signoff-wrapper {
+        display: inline-flex;
+        & a {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            z-index: 3;
+        }
+    }
+    & .activity-outcome-signoff {
+        margin-left: auto;
+		.view-signoff {
+			margin-top: 1.25rem;// 20px;
+		}
+    }
+}
+
+.bt-checkpoint-editor,
+.bt-checkpoint {
+	form.form-pagination {
+		margin-top: 0.75rem; // 12px
+
+		span {
+			label {
+				padding-top: 0.625rem; // 10px;
+				padding-right: 0;
+			}
+			
+			.icon-stack {
+				margin-top: -0.1875rem; // -3px;
+			}
+		}
+
+		&.form-inline > .form-group {
+			width: auto;
+		}
+	}
+}

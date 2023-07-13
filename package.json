@@ -22,7 +22,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.58.3"
+    "sass": "^1.63.6"
   },
   "overrides": {
     "chokidar": "3.5.3",
