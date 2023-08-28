@@ -43,7 +43,7 @@
         top: auto;
         right: auto;
         margin: 0.8125rem $spacing-xl 0 0; // 13px 20px 0 0;
-        padding: 0;
+        padding: 0.44rem 0;
         box-shadow: none;
         height: auto !important;
         float: right;
@@ -57,11 +57,12 @@
         input[type=text] {
             width: calc(100% - 4.6875rem); // calc(100% - 75px)
             float: left;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
             margin-left: $spacing-lg;
             @include media-breakpoint-up(md) {
               width: 12rem;
+              height: 3.125rem;
             }
             @include media-breakpoint-up(lg) {
                 width: auto;
@@ -71,14 +72,15 @@
         .input-group-append {
             display: block !important;
             float: left;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-top-right-radius: $input-border-radius;
-            border-bottom-right-radius: $input-border-radius;
-            border-left: $btn-border-width solid $btn-secondary-border;
+            //border-top-right-radius: $input-border-radius;
+            //border-bottom-right-radius: $input-border-radius;
+            //border-left: $btn-border-width solid $btn-secondary-border;
             margin-left: -$btn-border-width;
             @include media-breakpoint-up(md) {
                 float: right;
+                height: 3.125rem;
+                border-top-right-radius: 1.5rem;
+                border-bottom-right-radius: 1.5rem;
             }
         }
     }
@@ -86,6 +88,7 @@
 
 .navbar {
     border: 1px solid transparent;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
     padding: 0;
     > .container {
         display: block;

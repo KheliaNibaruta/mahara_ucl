@@ -11,7 +11,7 @@
 $theme = new stdClass();
 
 /* Give your new theme a name here */
-$theme->displayname = 'ucl';
+$theme->displayname = 'ucl_from_raw';
 
 /* Set parent to boolean FALSE to specify the theme has no parent */
 /* If your parent theme is a subtheme, for example Modern, Default, Ocean, or Primaryschool,

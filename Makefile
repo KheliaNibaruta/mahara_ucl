@@ -70,7 +70,7 @@ define nvm_check
 	cd .. && . "${HOME}/.nvm/nvm.sh" && cd $(ROOT_DIR) && nvm install
 endef
 
-production = true
+production = false
 css:
 	$(info Rebuilding CSS on host)
 ifeq (, $(shell which npm))
